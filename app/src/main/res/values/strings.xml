@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Clean</string>
+    <string name="load_user">Load User</string>
+    <string name="avatar">avatar</string>
+</resources>
