@@ -5,10 +5,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.clean.data.model.UserDetailEntity
 import com.example.clean.databinding.ListItemUsersBinding
+import com.example.clean.domain.model.UserDetailModel
 
-class UserAdapter(private val items: List<UserDetailEntity>) : RecyclerView.Adapter<UserAdapter.ViewHolder>(){
+class UserAdapter(private val items: List<UserDetailModel>) : RecyclerView.Adapter<UserAdapter.ViewHolder>(){
 
     class ViewHolder(val binding: ListItemUsersBinding) : RecyclerView.ViewHolder(binding.root)
 

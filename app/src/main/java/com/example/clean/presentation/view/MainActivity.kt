@@ -7,6 +7,7 @@ import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.clean.data.model.UserDetailEntity
 import com.example.clean.databinding.ActivityMainBinding
+import com.example.clean.domain.model.UserDetailModel
 import com.example.clean.presentation.view.adapter.UserAdapter
 import com.example.clean.presentation.viewmodel.UserViewModel
 import com.example.clean.utils.ViewState
@@ -16,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var adapter: UserAdapter
-    private val userList = mutableListOf<UserDetailEntity>()
+    private val userList = mutableListOf<UserDetailModel>()
 
     private val viewModel: UserViewModel by viewModel()
 
@@ -47,7 +48,7 @@ class MainActivity : AppCompatActivity() {
                     Log.d("IS_LOADING", "Loading bro")
                 }
                 is ViewState.Success -> {
-                    val users = state.data as List<UserDetailEntity>
+                    val users = state.data as List<UserDetailModel>
                     userList.addAll(users)
 
                     adapter.notifyDataSetChanged()
