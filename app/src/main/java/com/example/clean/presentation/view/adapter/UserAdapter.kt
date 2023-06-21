@@ -36,9 +36,7 @@ class UserAdapter(private var items: MutableList<UserDetailModel>) : RecyclerVie
     fun addData(item: List<UserDetailModel>){
         val currentSize = items.size
         items.addAll(item)
-        notifyDataSetChanged()
-
-
+        notifyItemRangeChanged(currentSize, item.size)
     }
 
 

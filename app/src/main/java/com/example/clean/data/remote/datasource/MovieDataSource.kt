@@ -7,7 +7,7 @@ import com.example.clean.data.remote.exception.ApiException
 class MovieDataSource(private val tmdbApiService: TmdbApiService) {
 
     suspend fun getUpcoming(page: Int) : List<MovieDetailEntity?> {
-        val response = tmdbApiService.upcomingMovie(page = page, language = "en-US", region = "id")
+        val response = tmdbApiService.upcomingMovie(page = page, language = "en-US", region = "")
         if(response.isSuccessful){
             return response.body()?.results ?: emptyList()
         }else{

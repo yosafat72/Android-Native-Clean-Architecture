@@ -13,7 +13,7 @@ data class MovieDetailModel(
     val backdropPath: Any? = null,
     val releaseDate: String? = null,
     val popularity: Any? = null,
-    val voteAverage: Int? = null,
+    val voteAverage: Float? = null,
     val id: Int? = null,
     val adult: Boolean? = null,
     val voteCount: Int? = null
