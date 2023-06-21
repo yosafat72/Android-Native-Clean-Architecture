@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.example.clean.databinding.ListItemUsersBinding
 import com.example.clean.domain.model.UserDetailModel
 
-class UserAdapter(private val items: List<UserDetailModel>) : RecyclerView.Adapter<UserAdapter.ViewHolder>(){
+class UserAdapter(private var items: MutableList<UserDetailModel>) : RecyclerView.Adapter<UserAdapter.ViewHolder>(){
 
     class ViewHolder(val binding: ListItemUsersBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -31,6 +31,14 @@ class UserAdapter(private val items: List<UserDetailModel>) : RecyclerView.Adapt
 
     override fun getItemCount(): Int {
         return items.size
+    }
+
+    fun addData(item: List<UserDetailModel>){
+        val currentSize = items.size
+        items.addAll(item)
+        notifyDataSetChanged()
+
+
     }
 
 
