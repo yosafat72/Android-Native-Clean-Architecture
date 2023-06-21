@@ -11,8 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import com.example.clean.databinding.FragmentHomeBinding
 import com.example.clean.domain.model.MovieDetailModel
-import com.example.clean.domain.model.UserDetailModel
-import com.example.clean.presentation.view.adapter.UserAdapter
 import com.example.clean.presentation.view.adapter.movie.UpcomingAdapter
 import com.example.clean.presentation.viewmodel.MovieViewModel
 import com.example.clean.utils.ViewState
