@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface ApiService {
 
-    @GET("api/users")
+    @GET("api/users/aassas")
     suspend fun getUsers(
         @Query("page") page: Int
     ) : Response<UserEntity>

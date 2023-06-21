@@ -12,6 +12,7 @@ import com.example.clean.domain.model.UserDetailModel
 import com.example.clean.presentation.view.adapter.UserAdapter
 import com.example.clean.presentation.viewmodel.UserViewModel
 import com.example.clean.utils.ViewState
+import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
@@ -23,7 +24,6 @@ class MainActivity : AppCompatActivity() {
     private val viewModel: UserViewModel by viewModel()
 
     var currentPage = 1
-    val itemsPerPage = 6
 
     var isLastPage = false
 
@@ -63,6 +63,7 @@ class MainActivity : AppCompatActivity() {
                 is ViewState.Error -> {
                     val errorMessage = state.error
                     Log.d("Error", "Error Bro")
+                    Snackbar.make(binding.root, errorMessage, Snackbar.LENGTH_LONG).show()
                 }
             }
         }

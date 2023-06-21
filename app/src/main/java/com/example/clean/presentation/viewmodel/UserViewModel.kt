@@ -18,10 +18,19 @@ class UserViewModel(private val getUsersUsecase: GetUsersUsecase) : ViewModel() 
         viewModelScope.launch {
             try {
                 val result = getUsersUsecase.execute(page = page)
-                _userListState.value = result.getOrNull()?.let { ViewState.Success(it) }
+                if(result.isSuccess){
+                    _userListState.value = result.getOrNull()?.let { ViewState.Success(it) }
+                }else{
+                    _userListState.value = result.exceptionOrNull()?.message?.let {
+                        ViewState.Error(
+                            it
+                        )
+                    }
+                }
             }catch (e: Exception){
                 _userListState.value = ViewState.Error(e.message ?: "Unknown error occurred")
             }
+
         }
     }
 
