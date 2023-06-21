@@ -14,7 +14,8 @@ class App : Application(){
                 networkModule,
                 repositoryModule,
                 usecaseModule,
-                viewModelModule
+                viewModelModule,
+                tmdbNetworkModule
             )
         }
     }
