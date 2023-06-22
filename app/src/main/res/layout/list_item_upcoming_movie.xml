@@ -8,14 +8,15 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dp175"
         app:cardCornerRadius="@dimen/dp20"
         app:cardUseCompatPadding="true">
 
         <ImageView
             android:id="@+id/imgPoster"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"/>
 
     </androidx.cardview.widget.CardView>
 

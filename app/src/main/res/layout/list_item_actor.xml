@@ -37,6 +37,9 @@
         android:layout_gravity="center"
         android:textColor="@color/white"
         android:textSize="@dimen/sp14"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:maxEms="5"
+        android:maxLines="1"
+        android:ellipsize="marquee"/>
 
 </LinearLayout>

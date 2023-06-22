@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
-import androidx.recyclerview.widget.SnapHelper
 import com.example.clean.databinding.FragmentHomeBinding
 import com.example.clean.domain.model.movie.MovieDetailModel
 import com.example.clean.domain.model.person.PersonDetailModel
@@ -42,13 +41,13 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         initFeaturedRecyclerView()
         initNowPlayingRecyclerView()
         initPersonRecyclerView()
-        initViewModel();
+        initViewModel()
 
         viewModel.loadUpcoming(page = 1)
         viewModel.loadNowPlaying(page = 1)
@@ -91,11 +90,14 @@ class HomeFragment : Fragment() {
         viewModel.movieListState.observe(viewLifecycleOwner) { state ->
             when (state) {
                 is ViewState.Loading -> {
-                    Log.d("IS_LOADING", "Loading bro")
+                    binding.featureLayoutShimmer.root.visibility = View.VISIBLE
+                    binding.featureLayout.root.visibility = View.GONE
                 }
                 is ViewState.Success -> {
+                    binding.featureLayoutShimmer.root.visibility = View.GONE
+                    binding.featureLayout.root.visibility = View.VISIBLE
+
                     val movies = state.data as List<MovieDetailModel>
-                    Log.d("Movie Data ", movies.toString())
                     adapter.addData(movies)
 
                 }
@@ -110,11 +112,14 @@ class HomeFragment : Fragment() {
         viewModel.movieNowPlayingListState.observe(viewLifecycleOwner) { state ->
             when (state) {
                 is ViewState.Loading -> {
-                    Log.d("IS_LOADING", "Loading bro")
+                    binding.nowComingLayoutShimmer.root.visibility = View.VISIBLE
+                    binding.nowComingLayout.root.visibility = View.GONE
                 }
                 is ViewState.Success -> {
+                    binding.nowComingLayoutShimmer.root.visibility = View.GONE
+                    binding.nowComingLayout.root.visibility = View.VISIBLE
+
                     val movies = state.data as List<MovieDetailModel>
-                    Log.d("Movie Now Playing Data ", movies.toString())
                     adapterNowPlayingAdapter.addData(movies)
 
                 }
@@ -129,11 +134,14 @@ class HomeFragment : Fragment() {
         viewModelPerson.personTrendingListState.observe(viewLifecycleOwner) {state ->
             when (state) {
                 is ViewState.Loading -> {
-                    Log.d("IS_LOADING", "Loading bro")
+                    binding.popularActorLayoutShimmer.root.visibility = View.VISIBLE
+                    binding.popularActorLayout.root.visibility = View.GONE
                 }
                 is ViewState.Success -> {
+                    binding.popularActorLayoutShimmer.root.visibility = View.GONE
+                    binding.popularActorLayout.root.visibility = View.VISIBLE
+
                     val persons = state.data as List<PersonDetailModel>
-                    Log.d("Trending Person Data ", persons.toString())
                     adapterPerson.addData(persons)
 
                 }
