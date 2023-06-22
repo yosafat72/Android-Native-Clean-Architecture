@@ -1,7 +1,7 @@
-package com.example.clean.data.mapper
+package com.example.clean.data.mapper.movie
 
-import com.example.clean.data.model.MovieDetailEntity
-import com.example.clean.domain.model.MovieDetailModel
+import com.example.clean.data.model.movie.MovieDetailEntity
+import com.example.clean.domain.model.movie.MovieDetailModel
 
 object MovieDetailMapper {
 

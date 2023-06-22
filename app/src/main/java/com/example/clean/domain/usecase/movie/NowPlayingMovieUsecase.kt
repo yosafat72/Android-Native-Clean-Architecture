@@ -5,12 +5,12 @@ import com.example.clean.domain.repository.movie.MovieRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class UpcomingMovieUsecase(private val repository: MovieRepository) {
+class NowPlayingMovieUsecase(private val repository: MovieRepository) {
 
     suspend fun execute(page: Int) : Result<List<MovieDetailModel?>> {
         return withContext(Dispatchers.IO){
             try {
-                val movies = repository.upcomingMovie(page = page)
+                val movies = repository.nowPlayingMovie(page = page)
                 Result.success(movies)
             }catch (e: Exception) {
                 Result.failure(e)

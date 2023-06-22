@@ -1,7 +1,8 @@
 package com.example.clean.di
 
 import com.example.clean.data.remote.api.TmdbApiService
-import com.example.clean.data.remote.datasource.MovieDataSource
+import com.example.clean.data.remote.datasource.movie.MovieDataSource
+import com.example.clean.data.remote.datasource.person.PersonDataSource
 import com.example.clean.data.remote.interceptor.HeaderInterceptor
 import okhttp3.OkHttpClient
 import org.koin.dsl.module
@@ -14,6 +15,7 @@ val tmdbNetworkModule = module {
     single { createTmdbApiService(get()) }
     single { HeaderInterceptor() }
     single { MovieDataSource(get()) }
+    single { PersonDataSource(get()) }
 }
 
 private fun createOkHttpClient(): OkHttpClient {

@@ -1,4 +1,4 @@
-package com.example.clean.presentation.view.adapter.movie
+package com.example.clean.presentation.view.adapter.person
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -6,16 +6,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.clean.R
-import com.example.clean.databinding.ListItemUpcomingMovieBinding
-import com.example.clean.domain.model.movie.MovieDetailModel
+import com.example.clean.databinding.ListItemActorBinding
+import com.example.clean.domain.model.person.PersonDetailModel
 import com.example.clean.utils.Urls
 
-class UpcomingAdapter(private var items: MutableList<MovieDetailModel>) : RecyclerView.Adapter<UpcomingAdapter.ViewHolder>(){
+class TrendingPersonAdapter(private var items: MutableList<PersonDetailModel>) : RecyclerView.Adapter<TrendingPersonAdapter.ViewHolder>() {
 
-    class ViewHolder(val binding: ListItemUpcomingMovieBinding) : RecyclerView.ViewHolder(binding.root)
+    class ViewHolder(val binding: ListItemActorBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ListItemUpcomingMovieBinding.inflate(
+        val binding = ListItemActorBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
@@ -27,17 +27,19 @@ class UpcomingAdapter(private var items: MutableList<MovieDetailModel>) : Recycl
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
         Glide.with(holder.itemView)
-            .load(Urls.BASE_IMAGE_POSTER_URL + item.backdropPath)
-            .placeholder(R.drawable.image_placeholder)
-            .error(R.drawable.image_placeholder)
-            .into(holder.binding.imgPoster)
+            .load(Urls.BASE_IMAGE_TRENDING_URL + item.profilePath)
+            .placeholder(R.drawable.img_profile_actor_placeholder)
+            .centerCrop()
+            .error(R.drawable.img_profile_actor_placeholder)
+            .into(holder.binding.imgActor)
+        holder.binding.tvActor.text = item.name
     }
 
     override fun getItemCount(): Int {
         return items.size
     }
 
-    fun addData(item: List<MovieDetailModel>) {
+    fun addData(item: List<PersonDetailModel>) {
         val currentSize = items.size
         items.addAll(item)
         notifyItemRangeChanged(currentSize, item.size)
