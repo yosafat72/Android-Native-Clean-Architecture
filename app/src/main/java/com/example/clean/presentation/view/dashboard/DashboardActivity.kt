@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import com.example.clean.R
 import com.example.clean.databinding.ActivityDashboardBinding
 import com.example.clean.presentation.view.dashboard.fragment.HomeFragment
-import com.example.clean.presentation.view.dashboard.fragment.ProfileFragment
+import com.example.clean.presentation.view.dashboard.fragment.FavoriteFragment
 
 class DashboardActivity : AppCompatActivity() {
 
@@ -27,8 +27,8 @@ class DashboardActivity : AppCompatActivity() {
                     replaceFragment(HomeFragment())
                     true
                 }
-                R.id.itemAccount -> {
-                    replaceFragment(ProfileFragment())
+                R.id.itemFavorite -> {
+                    replaceFragment(FavoriteFragment())
                     true
                 }
                 else -> false

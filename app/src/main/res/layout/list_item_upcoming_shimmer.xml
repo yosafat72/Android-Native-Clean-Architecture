@@ -24,13 +24,13 @@
 
         <com.facebook.shimmer.ShimmerFrameLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp175"
+            android:layout_height="@dimen/dp200"
             app:shimmer_duration="800"
             app:shimmer_auto_start="true">
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp175"
+                android:layout_height="match_parent"
                 android:background="@color/manatee" />
 
         </com.facebook.shimmer.ShimmerFrameLayout>

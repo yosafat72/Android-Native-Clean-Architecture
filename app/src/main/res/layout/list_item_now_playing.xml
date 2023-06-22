@@ -48,6 +48,19 @@
         android:rating="3.7"
         tools:ignore="SpeakableTextPresentCheck"
         android:layout_gravity="center"
-        android:layout_marginBottom="@dimen/dp10"
         android:progressTint="@color/selective_yellow" />
+
+    <Button
+        android:id="@+id/btnDetail"
+        android:layout_width="@dimen/dp100"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp5"
+        android:text="@string/detail"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/selective_yellow"
+        android:textSize="@dimen/sp14"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_marginBottom="@dimen/dp20"/>
 </LinearLayout>

@@ -5,7 +5,7 @@
         android:icon="@drawable/baseline_home"
         android:title="@string/home"/>
     <item
-        android:id="@+id/itemAccount"
-        android:icon="@drawable/baseline_account_circle"
-        android:title="@string/account"/>
+        android:id="@+id/itemFavorite"
+        android:icon="@drawable/baseline_star"
+        android:title="@string/favorite"/>
 </menu>
