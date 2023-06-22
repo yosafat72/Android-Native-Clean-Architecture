@@ -10,4 +10,9 @@
     <dimen name="dp5">5dp</dimen>
     <dimen name="dp100">100dp</dimen>
     <dimen name="dp75">75dp</dimen>
+    <dimen name="dp175">175dp</dimen>
+    <dimen name="dp50">50dp</dimen>
+    <dimen name="dp120">120dp</dimen>
+    <dimen name="dp165">165dp</dimen>
+    <dimen name="dp150">150dp</dimen>
 </resources>

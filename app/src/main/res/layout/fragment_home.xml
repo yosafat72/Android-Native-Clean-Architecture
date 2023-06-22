@@ -18,15 +18,30 @@
 
             <include
                 android:id="@+id/featureLayout"
-                layout="@layout/feature_layout"/>
+                layout="@layout/feature_layout"
+                android:visibility="gone"/>
+
+            <include
+                android:id="@+id/featureLayoutShimmer"
+                layout="@layout/list_item_upcoming_shimmer"/>
 
             <include
                 android:id="@+id/popularActorLayout"
-                layout="@layout/popular_actors_layout"/>
+                layout="@layout/popular_actors_layout"
+                android:visibility="gone"/>
+
+            <include
+                android:id="@+id/popularActorLayoutShimmer"
+                layout="@layout/list_item_actor_shimmer"/>
 
             <include
                 android:id="@+id/nowComingLayout"
-                layout="@layout/now_coming_layout"/>
+                layout="@layout/now_coming_layout"
+                android:visibility="gone"/>
+
+            <include
+                android:id="@+id/nowComingLayoutShimmer"
+                layout="@layout/list_item_now_playing_shimmer"/>
 
         </LinearLayout>
 
