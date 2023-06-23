@@ -137,7 +137,8 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerGenre"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp10"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -155,12 +156,12 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/status"
+                            android:text="Release Date"
                             android:textColor="@color/white"
                             android:textSize="@dimen/sp14"/>
 
                         <TextView
-                            android:id="@+id/tvStatus"
+                            android:id="@+id/tvReleaseData"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             tools:text="Released"
@@ -220,7 +221,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="@string/overview"
+                    android:text="@string/overview"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -235,10 +236,20 @@
                     android:textSize="@dimen/sp14"
                     android:layout_marginTop="@dimen/dp10"/>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/production_companies"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/dp20"/>
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerProduction"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp10"/>
 
             </LinearLayout>
 
