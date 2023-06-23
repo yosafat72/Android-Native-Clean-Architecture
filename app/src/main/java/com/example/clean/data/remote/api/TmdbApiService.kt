@@ -28,4 +28,12 @@ interface TmdbApiService {
         @Path("time_window") timeWindow: String
     ) : Response<PersonEntity>
 
+    @GET("account/8128796/favorite/movies")
+    suspend fun getFavoriteMovie(
+        @Query("page") page: Int,
+        @Query("language") language: String,
+        @Query("session_id") region: String,
+        @Query("sort_by") sortBy: String
+    ) : Response<MovieEntity>
+
 }

@@ -24,4 +24,13 @@ class MovieDataSource(private val tmdbApiService: TmdbApiService) {
         }
     }
 
+    suspend fun getFavoriteMovie(page: Int) : List<MovieDetailEntity?> {
+        val response = tmdbApiService.getFavoriteMovie(page = page, language = "en-US", region = "", sortBy = "created_at.desc")
+        if(response.isSuccessful){
+            return response.body()?.results ?: emptyList()
+        }else{
+            throw ApiException(code = response.code(), msg = response.message())
+        }
+    }
+
 }

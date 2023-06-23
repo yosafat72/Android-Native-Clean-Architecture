@@ -6,5 +6,6 @@ interface MovieRepository {
 
     suspend fun upcomingMovie(page: Int) : List<MovieDetailModel?>
     suspend fun nowPlayingMovie(page: Int) : List<MovieDetailModel?>
+    suspend fun getFavoriteMovie(page: Int) : List<MovieDetailModel?>
 
 }

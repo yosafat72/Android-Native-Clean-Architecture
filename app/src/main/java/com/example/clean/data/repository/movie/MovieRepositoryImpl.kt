@@ -23,4 +23,12 @@ class MovieRepositoryImpl(private val remoteDataSource: MovieDataSource) : Movie
         return remoteNowPlayingDomain
     }
 
+    override suspend fun getFavoriteMovie(page: Int): List<MovieDetailModel?> {
+        val remoteGetFavoriteMovie = remoteDataSource.getFavoriteMovie(page = page)
+        val remoteGetFavoriteMovieDomain = remoteGetFavoriteMovie.map {
+            it?.let { it1 -> MovieDetailMapper.MapToDomain(it1) }
+        }
+        return remoteGetFavoriteMovieDomain
+    }
+
 }
