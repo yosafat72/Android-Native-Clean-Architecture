@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Clean"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.view.dashboard.MovieDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.view.dashboard.DashboardActivity"
             android:exported="false" />
         <activity
