@@ -1,5 +1,6 @@
 package com.example.clean.data.remote.api
 
+import com.example.clean.data.model.movie.MovieDetailItemEntity
 import com.example.clean.data.model.movie.MovieEntity
 import com.example.clean.data.model.person.PersonEntity
 import retrofit2.Response
@@ -35,5 +36,11 @@ interface TmdbApiService {
         @Query("session_id") region: String,
         @Query("sort_by") sortBy: String
     ) : Response<MovieEntity>
+
+    @GET("movie/{movie_id}")
+    suspend fun getMovieDetails(
+        @Path("movie_id") movieId: Int,
+        @Query("language") language: String,
+    ) : Response<MovieDetailItemEntity>
 
 }

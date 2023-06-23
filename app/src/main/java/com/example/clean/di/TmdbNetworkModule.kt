@@ -2,6 +2,7 @@ package com.example.clean.di
 
 import com.example.clean.data.remote.api.TmdbApiService
 import com.example.clean.data.remote.datasource.movie.MovieDataSource
+import com.example.clean.data.remote.datasource.movie.MovieDetailDataSource
 import com.example.clean.data.remote.datasource.person.PersonDataSource
 import com.example.clean.data.remote.interceptor.HeaderInterceptor
 import okhttp3.OkHttpClient
@@ -16,6 +17,7 @@ val tmdbNetworkModule = module {
     single { HeaderInterceptor() }
     single { MovieDataSource(get()) }
     single { PersonDataSource(get()) }
+    single { MovieDetailDataSource(get()) }
 }
 
 private fun createOkHttpClient(): OkHttpClient {

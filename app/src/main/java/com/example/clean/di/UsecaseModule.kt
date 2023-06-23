@@ -1,5 +1,6 @@
 package com.example.clean.di
 
+import com.example.clean.domain.usecase.movie.DetailMovieUsecase
 import com.example.clean.domain.usecase.movie.GetFavoriteMovieUsecase
 import com.example.clean.domain.usecase.movie.NowPlayingMovieUsecase
 import com.example.clean.domain.usecase.movie.UpcomingMovieUsecase
@@ -11,4 +12,5 @@ val usecaseModule = module {
     factory { NowPlayingMovieUsecase(get()) }
     factory { TrendingPersonUsecase(get()) }
     factory { GetFavoriteMovieUsecase(get()) }
+    factory { DetailMovieUsecase(get()) }
 }

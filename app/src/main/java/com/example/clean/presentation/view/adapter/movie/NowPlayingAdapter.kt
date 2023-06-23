@@ -1,6 +1,7 @@
 package com.example.clean.presentation.view.adapter.movie
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -8,6 +9,7 @@ import com.bumptech.glide.Glide
 import com.example.clean.R
 import com.example.clean.databinding.ListItemNowPlayingBinding
 import com.example.clean.domain.model.movie.MovieDetailModel
+import com.example.clean.presentation.view.dashboard.MovieDetailActivity
 import com.example.clean.utils.Urls
 
 class NowPlayingAdapter(private var items: MutableList<MovieDetailModel>) : RecyclerView.Adapter<NowPlayingAdapter.ViewHolder>(){
@@ -36,6 +38,12 @@ class NowPlayingAdapter(private var items: MutableList<MovieDetailModel>) : Recy
             holder.binding.ratingBar.rating = 0f
         }else{
             holder.binding.ratingBar.rating = item.voteAverage / 2
+        }
+
+        holder.binding.btnDetail.setOnClickListener {
+            val intent = Intent(holder.itemView.context, MovieDetailActivity::class.java)
+            intent.putExtra("movieId", item.id)
+            holder.itemView.context.startActivity(intent)
         }
     }
 
