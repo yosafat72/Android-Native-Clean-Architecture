@@ -1,3 +1,6 @@
+name: Authenticate Firebase
+  run: firebase login:ci --no-localhost --interactive
+
 name: Build & upload to Firebase App Distribution
 
 on: [push]
