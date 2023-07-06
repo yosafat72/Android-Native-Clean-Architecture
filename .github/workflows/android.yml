@@ -19,5 +19,11 @@ jobs:
         with:
           java-version: '11'
 
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v2
+        with:
+          sdk-platform: 'platforms;android-30'
+          ndk-version: '21.4.7075529'
+
       - name: Build with Gradle
         run: ./gradlew assembleDebug
