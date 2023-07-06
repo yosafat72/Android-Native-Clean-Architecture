@@ -1,8 +1,6 @@
 name: Integrate Firebase Distributions + Github Actions
 
-on:
-  push:
-    branches: [ master ]
+on: [push]
 
 jobs:
   builds:
