@@ -3,19 +3,12 @@ name: Android CI/CD
 on:
   push:
     branches:
-      - main  # Ubah branch sesuai dengan kebutuhan Anda
-  pull_request:
-    branches:
-      - main  # Ubah branch sesuai dengan kebutuhan Anda
+      - main
 
 jobs:
   build:
-
+    name: Build
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        distribution: [ googlePlay, internalTesting, release ]
 
     steps:
       - name: Checkout repository
@@ -26,13 +19,5 @@ jobs:
         with:
           java-version: '11'
 
-      - name: Build and test
-        run: |
-          ./gradlew assembleDebug
-          ./gradlew testDebug
-
-      - name: Upload APK
-        uses: actions/upload-artifact@v2
-        with:
-          name: app-debug
-          path: app/build/outputs/apk/debug/app-debug.apk
+      - name: Build with Gradle
+        run: ./gradlew assembleDebug
