@@ -1,6 +1,3 @@
-name: Authenticate Firebase
-  run: firebase login:ci --no-localhost --interactive
-
 name: Build & upload to Firebase App Distribution
 
 on: [push]
@@ -18,6 +15,8 @@ jobs:
           java-version: 11
       - name: build release
         run: ./gradlew assembleRelease
+      - name: Firebase login
+        run: firebase login
       - name: upload artifact to Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
